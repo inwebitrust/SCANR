@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Scanr - Proto bulles</title>
+    <meta name="description" content="Scanr - Proto bulles"/>
+    <link rel="stylesheet" href="app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="Scanr - Proto bulles">
+	<meta name="abstract" content="Scanr - Proto bulles">
+	<meta name="author" content="Wedodata">
+	<meta name="robots" content="nofollow, noindex">
+	<link rel="shortcut icon" type="image/png" href=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1"/>    
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body data-page="home">
+	<section id="App">
+        
+        <section id="Head">
+            <div class="head_title"><span class="title_nb"></span> productions</div>
+        </section>
+
+        <section id="Menu">
+            <div class="menu_block" data-block="selection">
+                <div class="block_title">Sélectionner un type de production</div>
+                <div class="menu_typebt" data-type="publication">
+                    <span class="typebt_nb"></span> publications
+                </div>
+                <div class="menu_typebt" data-type="brevet">
+                    <span class="typebt_nb"></span> brevets
+                </div>
+                <div class="menu_typebt" data-type="these">
+                    <span class="typebt_nb"></span> thèses
+                </div>
+
+                <div class="block_appendix">
+                    <div class="appendix_title">Cliquer sur une bulle pour afficher<br />le détail d’une production</div>
+                    <div class="appendix_legend">
+                        <span class="legend_publication">Publication</span> et <span class="legend_these">Thèse</span> en Open Access
+                    </div>
+                </div>
+
+                <div class="block_productiontype">
+                    Afficher les publications par domaines de recherche
+                </div>
+            </div>
+
+            <div class="menu_block">
+                <div class="block_title">Sélectionner une période</div>
+                <div id="RangeSlider"></div>
+                <div class="range_value" data-range="low"></div>
+                <div class="range_value" data-range="up"></div>
+            </div>
+
+            <div class="menu_block">
+                <div class="block_title">Rechercher dans les productions</div>
+                <input type="text" />
+                <div class="menu_tooltip">
+                    <a class="tooltip_closebt">x</a>
+                    <div class="tooltip_title"></div>
+                    <div class="tooltip_date">Date de dépot : <span class="date_value"></span></div>
+                    <div class="tooltip_author">Auteur : <span class="author_value"></span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ProductionsView">
+            <div class="packcircle" data-type="these"></div>
+            <div class="packcircle" data-type="publication"></div>
+            <div class="packcircle" data-type="brevet"></div>
+        </section>
+
+        <section id="ProductionTypeView">
+            <div class="typepackcircle"></div>
+        </section>
+
+        <section id="ProductionTypeByDomainView">
+            <div class="domainpackcircle" data-domain="1"></div>
+            <div class="domainpackcircle" data-domain="2"></div>
+            <div class="domainpackcircle" data-domain="3"></div>
+            <div class="domainpackcircle" data-domain="4"></div>
+            <div class="domainpackcircle" data-domain="5"></div>
+            <div class="domainpackcircle" data-domain="6"></div>
+        </section>
+
+	</section>
+    <script src="app.js"></script>
+    <script>
+        require('application').init();
+    </script>
+
+</body>
+</html>

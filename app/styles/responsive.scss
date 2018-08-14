@@ -1,0 +1,111 @@
+@import 'mixins/global';
+
+@media screen and (min-width: 1281px){
+	
+	/* Story */
+
+	#sideBar{
+		width: 350px;
+		right:-350px;
+	}
+
+	#popInContainer{
+		right:380px;
+	}
+
+	#mapper{
+		width: calc(100% - 350px);
+	}
+
+	.infoContainer{
+		width: 350px;
+	}
+
+	.infoContainer[data-step="decouverte"]{
+		left:350px;
+	}
+
+	#infoHeader.obj{
+		left:0;
+	}
+
+	#objHeader{
+		width: 350px;
+	}
+
+	.venteHeader{
+		width: 350px;
+	}
+
+	#conservationHeader{
+		width: 350px;
+	}
+
+	#objName{
+		font-size: 20px!important;
+		line-height: 24px!important;
+	}
+
+	#venteName{
+		font-size: 20px!important;
+		line-height: 24px!important;
+	}
+
+	#conservationName{
+		font-size: 20px!important;
+		line-height: 24px!important;	
+	}
+
+	.appLinkContainer{
+		margin: 0 80px;
+	}
+
+	.cicleTitle transblock{
+		font-size: 34px;
+	}
+
+	.circleTxt{
+		font-size:14px;
+		line-height:22px;
+		width:140%;
+	}
+
+	#homeimage {
+    	width: 810px;
+    	height: 370px;
+    	top: 20px;
+    	background-image: url(./img/banner-antiquitees-homepage-big@2x.png);
+    	background-size: 100% 100%;
+	}
+
+	#sideBar{
+		overflow: hidden;
+	}
+}
+
+@media screen and (max-width: 1023px){
+	#SmallScreenIllu{
+		display: block;
+	}
+	#Header{
+		display: none;
+	}
+	#App{
+		display: none;
+	}
+	#Footer{
+		display: none;
+	}
+	.home_launchbt{
+		display: none;
+	}
+}
+
+@media screen and (max-height: 651px){
+	.modalINHA, #discoverModale{
+		height:550px; 
+	}
+	#CreditsModale .modal_txtcontainer{
+		height: 400px;
+	}
+}

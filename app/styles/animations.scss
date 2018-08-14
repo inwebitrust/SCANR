@@ -1,0 +1,13 @@
+@import 'mixins/global';
+
+@keyframes highlight {
+  0%   { 
+    -webkit-box-shadow: 0 0 0 0px #A6A196;
+    box-shadow: 0 0 0 0px #A6A196; }
+  50% { 
+    -webkit-box-shadow: 0 0 0 10px #A6A196;
+    box-shadow: 0 0 0 10px #A6A196; }
+  100% { 
+    -webkit-box-shadow: 0 0 0 0px #A6A196;
+    box-shadow: 0 0 0 0px #A6A196; }
+}

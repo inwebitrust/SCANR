@@ -1,0 +1,281 @@
+@import 'mixins/global';
+
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size:13px;
+	line-height:16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#App{
+	text-align:center;
+	position: relative;
+	width:100%;
+
+	#Head{
+		width: 100%;
+		padding: 0 40px;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+
+	#Menu{
+		height: 100px;
+		width: 100%;
+		margin-top: 20px;
+		position: relative;
+		z-index: 100000;
+		.menu_block{
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 70px;
+			text-align: center;
+			width: 300px;
+			position: relative;
+			&[data-block="selection"]{
+				.block_title{
+					text-align: left;
+				}
+			}
+			#RangeSlider{
+				position: relative;
+				margin-top: 5px;
+			}
+			.range_value{
+				position: absolute;
+				top: 40px;
+				margin-left: -14px;
+			}
+			.menu_typebt{
+				width: 220px;
+				height: 30px;
+				border-radius: 10px;
+				border:1px solid #ccc;
+				line-height: 30px;
+				margin-top: 4px;
+				text-align: center;
+				text-align: left;
+				padding-left: 26px;
+				position: relative;
+				cursor: pointer;
+				&:before{
+					content:"";
+					position: absolute;
+					left: 10px;
+					top: 50%;
+					@include transform(translate(0, -50%));
+					width: 10px;
+					height: 10px;
+					border-radius: 10px;
+				}
+				&[data-type="publication"]{
+					&:before{
+						background-color: $colorPurple;
+					}
+					&.selected{
+						background:$colorPurple;
+						color:#fff;
+						&:before{ background-color: #fff;}
+					}
+				}
+				&[data-type="brevet"]{
+					&:before{
+						background-color: $colorOrange;
+					}
+					&.selected{
+						background:$colorOrange;
+						color:#fff;
+						&:before{ background-color: #fff;}
+					}
+				}
+				&[data-type="these"]{
+					&:before{
+						background-color: $colorYellow;
+					}
+					&.selected{
+						background:$colorYellow;
+						color:#fff;
+						&:before{ background-color: #fff;}
+					}
+				}
+			}
+
+			.block_appendix{
+				border-left:3px solid #4c6f8b;
+				padding-left: 8px;
+				margin-top: 10px;
+				text-align: left;
+				.appendix_legend{
+					.legend_publication{
+						position: relative;
+						padding-left: 12px;
+						&:before{
+							width: 10px;
+							height: 10px;
+							border:1px solid $colorPurple;
+							background:#fff;
+							position: absolute;
+							left: 0px;
+							top: 2px;
+							content: "";
+							border-radius:10px;
+						}
+					}
+					.legend_these{
+						position: relative;
+						padding-left: 12px;
+						margin-left: 2px;
+						&:before{
+							width: 10px;
+							height: 10px;
+							border:1px solid $colorYellow;
+							background:#fff;
+							position: absolute;
+							left: 0px;
+							top: 2px;
+							content: "";
+							border-radius:10px;
+						}
+					}
+				}
+			}
+
+			.block_productiontype{
+				display: none;
+				background-color: #3778bb;
+				border-radius: 10px;
+				margin-top: 20px;
+				width:220px;
+				color:#fff;
+				text-align: left;
+				padding: 10px;
+				cursor: pointer;
+				&.displayed{
+					display: block;
+				}
+			}
+
+			.menu_tooltip{
+				background-color: #003259;
+				color:#fff;
+				margin-top: 10px;
+				border-radius: 10px;
+				padding: 10px;
+				display: none;
+				position: relative;
+				.tooltip_closebt{
+					position: absolute;
+					right: 8px;
+					top: 5px;
+					cursor: pointer;
+					color:#fff;
+					font-size: 20px;
+					cursor: pointer;
+					text-decoration: none;
+				}
+				&.displayed{
+					display: block;
+				}
+			}
+		}
+	}
+
+	#ProductionTypeByDomainView{
+		width: 50% !important;
+		left: 55% !important;
+	}
+
+	#ProductionsView, #ProductionTypeView, #ProductionTypeByDomainView{
+		position: relative;
+		left: 50%;
+		width: 100%;
+		margin-top: -40px;
+		@include transform(translate(-50%, 0));
+		display: none;
+		&.displayed{
+			display: block;
+		}
+		.typepackcircle{
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			left: 50%;
+			top: 0px;
+			@include transform(translate(-50%, 0));
+		}
+		.domainpackcircle{
+			width: 200px;
+			height: 200px;
+			position: relative;
+			margin:20px;
+			.packcircle_legend{
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				@include transform(translate(-50%, 0));
+			}
+		}
+		.packcircle, .typepackcircle, .domainpackcircle{
+			display: inline-block;
+			vertical-align: top;
+			&[data-type="these"]{
+				width: 300px;
+				height: 300px;
+				position: absolute;
+				left: 50%;
+				top: 0px;
+				@include transform(translate(-50%, 0));
+			}
+			&[data-type="brevet"]{
+				width: 500px;
+				height: 500px;
+				position: absolute;
+				left: 50%;
+				top: 220px;
+				margin-left: 300px;
+				@include transform(translate(-50%, 0));
+			}
+			&[data-type="publication"]{
+				width: 500px;
+				height: 500px;
+				position: absolute;
+				left: 50%;
+				top: 220px;
+				margin-left: -300px;
+				@include transform(translate(-50%, 0));
+			}
+			.bubble{
+				width: 8px;
+				height: 8px;
+				border-radius: 8px;
+				display: inline-block;
+				vertical-align: top;
+				position: absolute;
+				@include transform(translate(-50%, -50%));
+				&[data-type="these"]{
+					background:$colorYellow;
+				}
+				&[data-type="brevet"]{
+					background:$colorOrange;
+				}
+				&[data-type="publication"]{
+					background:$colorPurple;
+				}
+				&[data-openaccess="1"]{
+					&[data-type="these"]{
+						background:#fff;
+						border:1px solid $colorYellow;
+					}
+					&[data-type="publication"]{
+						background:#fff;
+						border:1px solid $colorPurple;
+					}
+				}
+				&:hover{
+					opacity: .6;
+				}
+			}
+		}
+	}
+}
