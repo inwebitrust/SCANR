@@ -4776,12 +4776,20 @@ body {
     #App #Menu .menu_block {
       display: inline-block;
       vertical-align: top;
-      margin: 0 70px;
       text-align: center;
       width: 300px;
       position: relative; }
-      #App #Menu .menu_block[data-block="selection"] .block_title {
-        text-align: left; }
+      #App #Menu .menu_block[data-block="selection"] {
+        position: absolute;
+        left: 40px;
+        top: 0px; }
+        #App #Menu .menu_block[data-block="selection"] .block_title {
+          text-align: left; }
+      #App #Menu .menu_block[data-block="search"] {
+        position: absolute;
+        right: 30px;
+        top: 0px;
+        width: 240px; }
       #App #Menu .menu_block #RangeSlider {
         position: relative;
         margin-top: 5px; }

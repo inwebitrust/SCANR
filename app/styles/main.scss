@@ -29,14 +29,22 @@ body{
 		.menu_block{
 			display: inline-block;
 			vertical-align: top;
-			margin: 0 70px;
 			text-align: center;
 			width: 300px;
 			position: relative;
 			&[data-block="selection"]{
+				position: absolute;
+				left: 40px;
+				top: 0px;
 				.block_title{
 					text-align: left;
 				}
+			}
+			&[data-block="search"]{
+				position: absolute;
+				right: 30px;
+				top: 0px;
+				width: 240px;
 			}
 			#RangeSlider{
 				position: relative;
