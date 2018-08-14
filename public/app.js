@@ -171,9 +171,6 @@ var App = {
         var Utils = require("utils");
         this.utils = new Utils();
 
-        var HeaderView = require("views/headerView");
-        this.headerView = new HeaderView();
-
         this.render();
     },
 
@@ -538,47 +535,6 @@ var Utils = Backbone.View.extend({
 });
 
 module.exports = Utils;
-});
-
-require.register("views/footerView.js", function(exports, require, module) {
-var FooterView = Backbone.View.extend({
-
-    initialize:function(){
-        var self = this;
-    },
-
-    render:function(){
-        this.bindEvents();
-    },
-
-
-    bindEvents:function(){
-        var self = this;
-    },
-});
-
-module.exports = FooterView;
-});
-
-require.register("views/headerView.js", function(exports, require, module) {
-var HeaderView = Backbone.View.extend({
-
-    initialize:function(){
-        var self = this;
-
-    },
-
-    render:function(){
-        this.bindEvents();
-    },
-
-    bindEvents:function(){
-        var self = this;
-    },
-
-});
-
-module.exports = HeaderView;
 });
 
 require.register("___globals___", function(exports, require, module) {

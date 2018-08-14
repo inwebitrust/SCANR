@@ -21,9 +21,6 @@ var App = {
         var Utils = require("utils");
         this.utils = new Utils();
 
-        var HeaderView = require("views/headerView");
-        this.headerView = new HeaderView();
-
         this.render();
     },
 
